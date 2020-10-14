@@ -1,4 +1,4 @@
-package com.app.dao.implementers;
+package com.app.login.dao.impl;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -6,8 +6,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import com.app.dao.dbutils.MySqlConnection;
-import com.app.daos.LoginDAO;
 import com.app.exception.BusinessException;
+import com.app.login.dao.LoginDAO;
 import com.app.models.User;
 
 public class LoginDAOImpl implements LoginDAO {

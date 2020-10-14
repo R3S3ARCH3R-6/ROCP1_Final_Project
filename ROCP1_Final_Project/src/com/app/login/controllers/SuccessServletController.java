@@ -1,4 +1,4 @@
-package com.app.controllers;
+package com.app.login.controllers;
 
 import java.io.IOException;
 import java.io.PrintWriter;

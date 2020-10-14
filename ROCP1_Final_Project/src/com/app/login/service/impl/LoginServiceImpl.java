@@ -1,10 +1,10 @@
-package com.app.service.implement;
+package com.app.login.service.impl;
 
-import com.app.dao.implementers.LoginDAOImpl;
-import com.app.daos.LoginDAO;
 import com.app.exception.BusinessException;
+import com.app.login.dao.LoginDAO;
+import com.app.login.dao.impl.LoginDAOImpl;
+import com.app.login.service.LoginService;
 import com.app.models.User;
-import com.app.service.LoginService;
 
 public class LoginServiceImpl implements LoginService{
 

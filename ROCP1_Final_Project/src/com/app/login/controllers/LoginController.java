@@ -1,4 +1,4 @@
-package com.app.controllers;
+package com.app.login.controllers;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -12,9 +12,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.app.exception.BusinessException;
+import com.app.login.service.LoginService;
+import com.app.login.service.impl.LoginServiceImpl;
 import com.app.models.User;
-import com.app.service.LoginService;
-import com.app.service.implement.LoginServiceImpl;
 
 
 /**

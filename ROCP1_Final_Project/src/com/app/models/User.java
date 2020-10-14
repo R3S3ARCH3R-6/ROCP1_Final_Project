@@ -11,6 +11,7 @@ public class User {
 	private String lastName; // not null
 	private String email; // not null
 	private Role role;
+	//private int role;
 	
 	//potential inclusion to help (or make things difficult)
 	//private List<Account> account;
@@ -91,6 +92,16 @@ public class User {
 		
 		//this.role = role.setRoleId(roleId);
 	}
+
+	//alternate for Role
+	/*public int getRoleId() {
+		return role;
+	}
+
+	//alternate for Role
+	public void setRoleId(int roleId) {
+		this.role = roleId;
+	}*/
 
 
 	@Override

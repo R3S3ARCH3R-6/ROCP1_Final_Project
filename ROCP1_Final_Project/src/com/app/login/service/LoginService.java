@@ -1,4 +1,4 @@
-package com.app.service;
+package com.app.login.service;
 
 import com.app.exception.BusinessException;
 import com.app.models.User;
