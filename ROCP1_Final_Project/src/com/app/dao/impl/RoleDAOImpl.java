@@ -4,22 +4,23 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.List;
 
-import com.app.dao.AccountTypeDAO;
+import com.app.dao.RoleDAO;
 import com.app.dao.dbutils.MySqlConnection;
 import com.app.exception.BusinessException;
-import com.app.models.AccountType;
+import com.app.models.Role;
 
-public class AccountTypeDAOImpl implements AccountTypeDAO{
-	
+public class RoleDAOImpl implements RoleDAO {
+
+	//checks to see if the role exists
 	@Override
-	public boolean isValidAccountType(AccountType type){
+	public boolean isValidRole(Role role) throws BusinessException {
 		boolean b = false;
+
 		try(Connection connection = MySqlConnection.getConnection()){
-			String sql = "select account_type from bank where type=?";
+			String sql = "select role from bank where role=?";
 			PreparedStatement preparedStatement=connection.prepareStatement(sql);
-			preparedStatement.setString(1, type.getRole());
+			preparedStatement.setString(1, role.getRole());
 			
 			ResultSet resultSet=preparedStatement.executeQuery();
 			if(resultSet.next()) {
@@ -32,7 +33,8 @@ public class AccountTypeDAOImpl implements AccountTypeDAO{
 			//System.out.println(e); //this line you should take it off before going live(production)
 			throw new BusinessException("Internal error occured... Kindly contact SYSADMIN.....");
 		}
+		
 		return b;
 	}
-	
+
 }

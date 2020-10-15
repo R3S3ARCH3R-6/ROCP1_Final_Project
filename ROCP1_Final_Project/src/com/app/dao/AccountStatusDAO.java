@@ -13,8 +13,9 @@ public interface AccountStatusDAO {
 	//public int deleteStatus(int statusId) throws BusinessException;
 	
 	//employee and Admin functions
-	public List<AccountStatus> getAllStatuses() throws BusinessException;
-	public AccountStatus getStatusById(int statusId) throws BusinessException;
-	public List<AccountStatus> getStatusByType(String status) throws BusinessException;
+//	public List<AccountStatus> getAllStatuses() throws BusinessException;
+//	public AccountStatus getStatusById(int statusId) throws BusinessException;
+//	public List<AccountStatus> getStatusByType(String status) throws BusinessException;
 
+	public boolean isValidAccountStatus(AccountStatus status) throws BusinessException;
 }

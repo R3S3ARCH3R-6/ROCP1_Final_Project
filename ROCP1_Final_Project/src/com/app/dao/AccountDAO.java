@@ -14,11 +14,12 @@ public interface AccountDAO {
 	//public int deleteAccount(int accountId) throws BusinessException;
 	
 	//shared among all
-	public List<Account> getAllAccounts() throws BusinessException;
-	public Account getAccountById() throws BusinessException;
+	//public List<Account> getAllAccounts() throws BusinessException;
+	//public Account getAccountById() throws BusinessException;
 	
 	//may need help here
-	public List<Account> getAllAccountStatuses(AccountStatus status) throws BusinessException;
-	public List<Account> getAllAccountByType(AccountType type) throws BusinessException;	
-		
+	//public List<Account> getAllAccountStatuses(AccountStatus status) throws BusinessException;
+	//public List<Account> getAllAccountByType(AccountType type) throws BusinessException;	
+	
+	public boolean isValidAccount(Account account) throws BusinessException;
 }
