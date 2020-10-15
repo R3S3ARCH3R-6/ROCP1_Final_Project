@@ -14,8 +14,9 @@ public class RoleServiceImpl implements RoleService{
 		boolean b = false;
 		if(role!=null && role.getRole()!=null && (role.getRoleId()+"")!=null 
 				&& (role.getRoleId()+"").matches("[0-9]{1,4}") && 
-				(role.getRole().equalsIgnoreCase("savings") || 
-						role.getRole().equalsIgnoreCase("checking"))) {
+				(role.getRole().equalsIgnoreCase("administrator") || 
+						role.getRole().equalsIgnoreCase("employee") ||
+						role.getRole().equalsIgnoreCase("customer"))) {
 			b=dao.isValidRole(role);
 			
 		}else {

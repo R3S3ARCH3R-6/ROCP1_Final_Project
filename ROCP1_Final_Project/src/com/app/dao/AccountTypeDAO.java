@@ -13,9 +13,9 @@ public interface AccountTypeDAO {
 	//public int deleteAccountType(int typeId) throws BusinessException;
 	
 	//employee and Admin functions
-	//public List<AccountType> getAllAccountTypes() throws BusinessException;
-	//public List<AccountType> getAccountTypeByTitle(String type) throws BusinessException;
+	public List<AccountType> getAllAccountTypes() throws BusinessException;
+	public List<AccountType> getAccountTypeByTitle(String type) throws BusinessException;
 
 	public boolean isValidAccountType(AccountType type) throws BusinessException;
-	//public AccountType getAccountTypeById(int typeId) throws BusinessException;
+	public AccountType getAccountTypeById(int typeId) throws BusinessException;
 }

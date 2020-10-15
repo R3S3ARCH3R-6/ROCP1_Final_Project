@@ -18,7 +18,7 @@ public class RoleDAOImpl implements RoleDAO {
 		boolean b = false;
 
 		try(Connection connection = MySqlConnection.getConnection()){
-			String sql = "select role from bank where role=?";
+			String sql = "select role from role where role=?";
 			PreparedStatement preparedStatement=connection.prepareStatement(sql);
 			preparedStatement.setString(1, role.getRole());
 			
@@ -26,11 +26,11 @@ public class RoleDAOImpl implements RoleDAO {
 			if(resultSet.next()) {
 				b=true;
 			}else {
-				throw new BusinessException("Invalid Role Credentials");
+				throw new BusinessException("Invalid Role");
 			}
 			
 		}catch(ClassNotFoundException | SQLException e){
-			//System.out.println(e); //this line you should take it off before going live(production)
+			System.out.println(e); //this line you should take it off before going live(production)
 			throw new BusinessException("Internal error occured... Kindly contact SYSADMIN.....");
 		}
 		
