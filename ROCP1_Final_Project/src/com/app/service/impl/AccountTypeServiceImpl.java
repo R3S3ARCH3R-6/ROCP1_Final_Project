@@ -35,19 +35,42 @@ public class AccountTypeServiceImpl implements AccountTypeService {
 	@Override
 	public List<AccountType> getAccountTypeByTitle(String type) throws BusinessException {
 		List<AccountType> accountTypeList = null;
-		if(!isValidAccountType(type)){
+		
+		if(!isValidAccountTypeName(type)){
 			throw new BusinessException("Entered type " +type+ " is invlaid");
 		}else{
-			accountTypeList = dao.getAllAccountTypeByTitle();
+			accountTypeList = dao.getAccountTypeByTitle(type);
 		}
 		
 		return null;
 	}
 
-	@Override
-	public AccountType getAccountTypeById(int typeId) throws BusinessException {
-		// TODO Auto-generated method stub
-		return null;
+	private boolean isValidAccountTypeName(String typeName){
+		boolean b = false;
+		if(typeName.equalsIgnoreCase("savings") || 
+				typeName.equalsIgnoreCase("checking")){
+			b =true;
+		}
+		return b;
 	}
 	
+	@Override
+	public AccountType getAccountTypeById(int typeId) throws BusinessException {
+		AccountType accountType = null;
+		//this is code based off the previous methods
+		if(isValidId(typeId)){
+			accountType = dao.getAccountTypeById(typeId);
+		}else{
+			throw new BusinessException("Entered ID " + typeId + " is Invalid ...");
+		}
+		return accountType;
+	}
+	
+	private boolean isValidId(int accountTypeId){
+		boolean b = false;
+		if((accountTypeId+"").matches("[0-9]{1, 5}")){
+			b = true;
+		}
+		return b;
+	}
 }
